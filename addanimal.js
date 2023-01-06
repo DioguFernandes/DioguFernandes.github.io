@@ -34,7 +34,7 @@ $(document).ready(function () {
       gender: $("#sexo").val(),
       race: $("#raca").val(),
       weight: $("#peso").val(),
-      imagem: $("#selected").val(),
+      imagem: URL.createObjectURL($("#imagem").val()),
     };
     if (JSON.parse(window.localStorage.getItem("animais")) == null) {
       window.localStorage.setItem("animais", "[]");
