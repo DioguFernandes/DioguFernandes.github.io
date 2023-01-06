@@ -34,7 +34,7 @@ $(document).ready(function () {
       gender: $("#sexo").val(),
       race: $("#raca").val(),
       weight: $("#peso").val(),
-      imagem: createFile($("#imagem")[0]),
+      imagem: getBase64Image($("#imagem")[0].files[0]),
     };
     if (JSON.parse(window.localStorage.getItem("animais")) == null) {
       window.localStorage.setItem("animais", "[]");
@@ -87,11 +87,15 @@ function handleFileSelect(e) {
   });
 }
 
-function createFile(file) {
-  // try to create URL object with file else return null
-  try {
-    return URL.createObjectURL(file.files[0]);
-  } catch (e) {
-    return "https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg";
-  }
+function getBase64Image(file) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+
+  var dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
