@@ -10,7 +10,6 @@ if (localStorage.getItem("users") === null) {
 
 function getUser(email) {
   let users = JSON.parse(localStorage.getItem("users"));
-  console.log(users);
   let user = users.find((user) => user.email === email);
   return user;
 }
