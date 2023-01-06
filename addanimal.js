@@ -34,7 +34,7 @@ $(document).ready(function () {
       gender: $("#sexo").val(),
       race: $("#raca").val(),
       weight: $("#peso").val(),
-      imagem: URL.createObjectURL($("#imagem").val()),
+      imagem: createFile($("#imagem")[0]),
     };
     if (JSON.parse(window.localStorage.getItem("animais")) == null) {
       window.localStorage.setItem("animais", "[]");
@@ -85,4 +85,13 @@ function handleFileSelect(e) {
     };
     reader.readAsDataURL(f);
   });
+}
+
+function createFile(file) {
+  // try to create URL object with file else return null
+  try {
+    return URL.createObjectURL(file.files[0]);
+  } catch (e) {
+    return "https://t3.ftcdn.net/jpg/04/34/72/82/360_F_434728286_OWQQvAFoXZLdGHlObozsolNeuSxhpr84.jpg";
+  }
 }
