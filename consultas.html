@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Patinhas Center</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Slackey" />
+    <link rel="stylesheet" href="loginRegister\fonts\material-icon\css\material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+
+    <style>
+        body {
+            background-color: white;
+
+        }
+
+        #imagemgato {
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 260px;
+            height: 239.7px;
+            left: 400px;
+            top: 140px;
+
+            border-radius: 29px;
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+
+        body {
+            color: #000;
+            overflow-x: hidden;
+            height: 100%;
+            background-image: url("https://i.imgur.com/GMmCQHC.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%
+        }
+
+        .card {
+            padding: 30px 40px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            border: none !important;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+        }
+
+        .blue-text {
+            color: #00BCD4
+        }
+
+        .form-control-label {
+            margin-bottom: 0
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 8px 15px;
+            border-radius: 5px !important;
+            margin: 5px 0px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            font-size: 18px !important;
+            font-weight: 300
+        }
+
+        input:focus,
+        textarea:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            border: 1px solid #00BCD4;
+            outline-width: 0;
+            font-weight: 400
+        }
+
+        .btn-block {
+            text-transform: uppercase;
+            font-size: 15px !important;
+            font-weight: 400;
+            height: 43px;
+            cursor: pointer
+        }
+
+        .btn-block:hover {
+            color: #fff !important
+        }
+
+        button:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            outline-width: 0
+        }
+
+        body {
+            background-image: url("https://c4.wallpaperflare.com/wallpaper/686/355/705/paw-print-background-surface-wallpaper-preview.jpg");
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-md py-3">
+        <div class="container-fluid" style="width: 100%; margin: 0px 10px 0px 10px;"><a
+                class="navbar-brand d-flex align-items-center" href="#"><span id="logo">Patinhas
+                    Center</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item itens"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="aboutus.html">Sobre Nós</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="subscricao.html">Subscrição</a></li>
+                    <li class="dropdown nav-item ">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pets
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a class="dropdown-item" href="pets.html">Meus Pets</a></li>
+                            <li><a class="dropdown-item" href="addanimal.html">Registrar Pet</a></li>
+                            <li><a class="dropdown-item" href="fichatecnica.html">Ficha técnica</a></li>
+                            <li><a class="dropdown-item" href="consultas.html">Marcação de consultas</a></li>
+
+
+                        </ul>
+                        <script>
+                            if (localStorage.getItem('currentUser') == null) {
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" href="signup.html">Sign up</a>');
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" href="login.html">Login</a>');
+                            }
+                            else {
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" onclick="logout()" >Logout</a>');
+                                //say hello to the user
+                                document.write('<span class="text-muted ms-4">Olá, ' + JSON.parse(localStorage.getItem('currentUser')) + '</span>');
+                            }
+                        </script>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <div class="card">
+                    <h5 class="text-center mb-4">Agendar Consulta</h5>
+                    <form class="form-card">
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                    class="form-control-label px-3">Nome do Pet<span class="text-danger">
+                                        *</span></label> <input type="text" id="pet-name" name="fname"
+                                    placeholder="Escreva o nome do seu Pet" onblur="validate(1)" required> </div>
+                            <div class="col-sm-6 form-group" required>
+                                <div class="pb-2">Causa da Consulta:<span class="text-danger">
+                                        *</span> </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="reason" value="reason-2"
+                                        id="reason-2" required>
+                                    <label class="form-check-label" for="reason-2">
+                                        Consulta de Rotina
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="reason" value="reason-1"
+                                        id="reason-1" required>
+                                    <label class="form-check-label" for="reason-1">
+                                        Marcação para vacinas
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="reason" value="reason-3"
+                                        id="reason-3" required>
+                                    <label class="form-check-label" for="reason-3">
+                                        Consulta de Urgência
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group flex-column d-flex"> <label
+                                            class="form-control-label px-3">Data da Consulta<span class="text-danger">
+                                                *</span></label> <input type="date" id="consultation-date"
+                                            placeholder="" onblur="validate(3)" required> </div>
+                                    <div class="form-group flex-column d-flex"> <label
+                                            class="form-control-label px-3">Hora da Consulta<span class="text-danger">
+                                                *</span></label> <input type="time" id="consultation-time"
+                                            placeholder="" onblur="validate(3)" required> </div>
+
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="mb-3 pt-3">
+                                        <label for="" class="form-label">Outro tipo de consulta e notas
+                                            importantes</label>
+                                        <textarea class="form-control" name="" id="other-reason" rows="3"></textarea>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-between text-left">
+
+                        </div>
+
+                        <div class="row justify-content-end">
+                            <button type="submit" class=" btn btn-primary">Agendar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-light bg-light fixed-bottom" style="height:50px;" style="height: 50px;">
+        <div class="container small">
+
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link">SOBRE NÓS</a>
+                </div>
+            </div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link">CONTACTOS</a>
+                </div>
+            </div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link"> <i class="fa fa-location-arrow"
+                            aria-hidden="true"></i> AVEIRO</a>
+                </div>
+            </div>
+            <div class="navbar-text"> Copyright 2022 &copy; PetVet</div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/0fd79e709d.js"></script>
+    <script src="loginRegister\vendor\jquery\jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="authentication.js"></script>
+
+    <script></script>
+</body>
+
+</html>

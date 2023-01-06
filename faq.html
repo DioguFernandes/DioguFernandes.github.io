@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Slackey" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #index {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("https://images5.alphacoders.com/317/thumb-1920-317664.jpg");
+            background-position: top;
+            background-attachment: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+
+        .dropdown-menu {
+            background-color: rgba(255, 99, 71, 0);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .mainInner {
+            width: 100%;
+            max-width: calc(680px + 20px);
+            padding: 0 10px;
+            margin: 0 auto;
+        }
+
+        .main-wrap {
+            position: relative;
+            padding-top: 4rem;
+        }
+
+        .accor {
+            list-style: none;
+            padding: 0;
+            margin: 1.4rem 0;
+            line-height: 1.8rem;
+            font-size: 14px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 2px 0 8px 0 rgba(0, 0, 0, 0.2), -2px 0 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .accor>*:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .accor-title {
+            color: black;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            font-family: Poppins, sans-serif;
+            font-weight: 600;
+            transition: .1s ease;
+        }
+
+        .accor-title .icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            margin-left: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: inherit;
+        }
+
+        .accor-title .icon::before,
+        .accor-title .icon::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 2px;
+            background-color: black;
+            transition: inherit;
+        }
+
+        .accor-title .icon::after {
+            position: absolute;
+            transform: rotate(90deg);
+        }
+
+        .accor-content {
+            position: relative;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 16px;
+            color: black;
+            transition: .1s ease;
+        }
+
+        .accor-content>*:first-child {
+            margin-top: 0;
+        }
+
+        .accor-content>*:first-child {
+            margin-bottom: 0;
+        }
+
+        .accor-title::before,
+        .accor-content::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 2px;
+            transition: inherit;
+        }
+
+        .off-accor:checked~.accor-content {
+            max-height: 100vh;
+            padding-bottom: 16px;
+        }
+
+        .off-accor:checked~.accor-title .icon::after {
+            background-color: black;
+        }
+
+        .off-accor:checked~.accor-title .icon {
+            background-color: grey;
+        }
+
+        .off-accor:checked~.accor-title .icon::before {
+            background-color: black;
+        }
+
+        .off-accor:checked~.accor-title,
+        .off-accor:checked~.accor-content {
+            background-color: #d6d6d0
+        }
+
+        .off-accor:checked~.accor-title::before,
+        .off-accor:checked~.accor-content::before {
+            background-color: black;
+        }
+    </style>
+
+<body>
+
+
+
+
+    <nav class="navbar navbar-light navbar-expand-md py-3">
+        <div class="container-fluid" style="width: 100%; margin: 0px 10px 0px 10px;"><a
+                class="navbar-brand d-flex align-items-center" href="#"><span id="logo">Patinhas
+                    Center</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item itens"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="aboutus.html">Sobre Nós</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="subscricao.html">Subscrição</a></li>
+                    <li class="dropdown nav-item ">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pets
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a class="dropdown-item" href="pets.html">Meus Pets</a></li>
+                            <li><a class="dropdown-item" href="addanimal.html">Registrar Pet</a></li>
+                            <li><a class="dropdown-item" href="fichatecnica.html">Ficha técnica</a></li>
+                            <li><a class="dropdown-item" href="consultas.html">Marcação de consultas</a></li>
+
+
+                        </ul>
+                        <script>
+                            if (localStorage.getItem('currentUser') == null) {
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" href="signup.html">Sign up</a>');
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" href="login.html">Login</a>');
+                            }
+                            else {
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" onclick="logout()" >Logout</a>');
+                                //say hello to the user
+                                document.write('<span class="text-muted ms-4">Olá, ' + JSON.parse(localStorage.getItem('currentUser')) + '</span>');
+                            }
+                        </script>
+            </div>
+        </div>
+    </nav>
+
+    <div style="height:70px"></div>
+    <main class="main-wrap">
+        <div class="mainInner">
+            <ul class="accor">
+                <li>
+                    <input type="checkbox" name="accordion" id="off-accor1" class="off-accor hidden">
+                    <label for="off-accor1" class="accor-title">
+                        <span>A partir de que idade devo vacinar o meu cão?</span>
+                        <span class="icon"></span>
+                    </label>
+                    <div class="accor-content">
+                        <p>A primeira vacina pode iniciar-se quando o cachorro tem 6 semanas, mas no geral, a
+                            primovacinação inicia-se por voltas das 8 semanas (2 meses)..</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion" id="off-accor2" class="off-accor hidden">
+                    <label for="off-accor2" class="accor-title">
+                        <span>A partir de que idade devo vacinar o meu gato?</span>
+                        <span class="icon"></span>
+                    </label>
+                    <div class="accor-content">
+                        <p>O gato pode receber a sua primeira vacinação a partir das 8 semanas.</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion" id="off-accor3" class="off-accor hidden">
+                    <label for="off-accor3" class="accor-title">
+                        <span>Que vacinas devo fazer ao meu gato?</span>
+                        <span class="icon"></span>
+                    </label>
+                    <div class="accor-content">
+                        <p>O gato deve ser vacinado contra a Panleucopénia Felina e Rinotraqueíte Infecciosa. Outras
+                            vacinas disponíveis são a da Clamidiose, Raiva e Leucemia (ou Leucose) Felina.</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion" id="off-accor4" class="off-accor hidden">
+                    <label for="off-accor4" class="accor-title">
+                        <span>O que é o Microchip?</span>
+                        <span class="icon"></span>
+                    </label>
+                    <div class="accor-content">
+                        <p>O microchip é um dispositivo electrónico de dimensão muito reduzida que contém um código de
+                            identificação do animal, único a nível mundial.A informação contida do microchip pode ser
+                            lida através de um leitor adequado. Geralmente, os consultórios, clínicas e hospitais
+                            veterinários dispõem deste leitor, assim como canis municipais e certas associações ou
+                            centros de recolha de animais.</p>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" name="accordion" id="off-accor5" class="off-accor hidden">
+                    <label for="off-accor5" class="accor-title">
+                        <span>Como funciona o atendimento na clínica?</span>
+                        <span class="icon"></span>
+                    </label>
+                    <div class="accor-content">
+                        <p>A clínica veterinária funciona 24 horas por dia voltada para o atendimento de urgências e
+                            emergências clínicas mas também oferece outro tipo de serviços como uma loja de produtos
+                            para o seu animal.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+    <script src="FAQ.js"></script>
+    <nav class="navbar navbar-light bg-light fixed-bottom" style="height:50px;">
+        <div class="container small">
+
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link">SOBRE NÓS</a>
+                </div>
+            </div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link">CONTACTOS</a>
+                </div>
+            </div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link"> <i class="fa fa-location-arrow"
+                            aria-hidden="true"></i> AVEIRO</a>
+                </div>
+            </div>
+            <div class="navbar-text"> Copyright 2022 &copy; PetVet</div>
+        </div>
+    </nav>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/0fd79e709d.js"></script>
+</body>
+
+</html>
+<div>
