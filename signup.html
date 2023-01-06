@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>UntitlePatinhas center</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Slackey" />
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="loginRegister\css\style.css">
+    <link rel="stylesheet" href="loginRegister\fonts\material-icon\css\material-design-iconic-font.min.css">
+    <style>
+        body {
+            background-color: white;
+            overflow: hidden;
+
+        }
+
+        #imagemgato {
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 260px;
+            height: 239.7px;
+            left: 900px;
+            top: 140px;
+
+            border-radius: 29px;
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-md py-3">
+        <div class="container-fluid" style="width: 100%; margin: 0px 10px 0px 10px;"><a
+                class="navbar-brand d-flex align-items-center" href="#"><span id="logo">Patinhas
+                    Center</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item itens"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="aboutus.html">Sobre Nós</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="subscricao.html">Subscrição</a></li>
+                    <li class="dropdown nav-item ">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pets
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a class="dropdown-item" href="pets.html">Meus Pets</a></li>
+                            <li><a class="dropdown-item" href="addanimal.html">Registrar Pet</a></li>
+                            <li><a class="dropdown-item" href="fichatecnica.html">Ficha técnica</a></li>
+                            <li><a class="dropdown-item" href="consultas.html">Marcação de consultas</a></li>
+
+
+                        </ul>
+                        <script>
+                            if (localStorage.getItem('currentUser') == null) {
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" href="signup.html">Sign up</a>');
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" href="login.html">Login</a>');
+                            }
+                            else {
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" onclick="logout()" >Logout</a>');
+                                //say hello to the user
+                                document.write('<span class="text-muted ms-4">Olá, ' + JSON.parse(localStorage.getItem('currentUser')) + '</span>');
+                            }
+                        </script>
+            </div>
+        </div>
+    </nav>
+
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Criar Conta</h2>
+                    <form method="post" onsubmit="register(this); return false">
+                        <div class="mb-3"><input class="shadow-sm form-control" type="text" name="username"
+                                placeholder="Username" required=""></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="email" name="email"
+                                placeholder="Email" required=""></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password"
+                                placeholder="Password"></div>
+                        <div class="mb-3"><input class="shadow-sm form-control" type="password" name="password_repeat"
+                                placeholder="Repeat Password"></div>
+                        <div class="form-group form-button">
+                            <input type="submit" name="signup" id="signup" class="form-submit" value="Registrar"
+                                required="" />
+                        </div>
+                        <p class="text-muted">Have an account? <a href="login.html">Log in&nbsp;<svg
+                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-tabler icon-tabler-arrow-narrow-right">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <line x1="15" y1="16" x2="19" y2="12"></line>
+                                    <line x1="15" y1="8" x2="19" y2="12"></line>
+                                </svg></a>&nbsp;</p>
+                    </form>
+                </div>
+                <div class="signup-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div><img id="imagemgato" src="assets\images\gatinho.jpg" alt=""></div>
+
+
+
+
+
+    <div>
+        <img src="assets\images\filler1.png" class="filler1" alt="">
+    </div>
+
+
+
+    <script src="https://use.fontawesome.com/0fd79e709d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="./authentication.js"></script>
+
+    <script>
+
+
+    </script>
+</body>
+
+</html>

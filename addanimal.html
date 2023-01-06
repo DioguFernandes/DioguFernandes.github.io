@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Registo Pet - PetLink</title>
+        <meta name="description" content="Website da Petlink">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Slackey" />
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                overflow: hidden;
+            }
+
+            .andronio {
+                display: inline-block;
+                text-align: center;
+                background: var(--color);
+                color: var(--bg);
+                font-weight: bold;
+                line-height: 1;
+                border-radius: 10px;
+                position: relative;
+                text-decoration: none;
+                font-family: var(--font);
+                font-size: 1.25rem;
+            }
+
+            .andronio:before,
+            .andronio:after {
+                width: 50px;
+                height: 30px;
+                position: absolute;
+                content: "";
+                display: inline-block;
+                background: var(--color);
+                border-radius: 50%;
+                transition: transform 1s ease;
+                transform: scale(0);
+                z-index: -1;
+            }
+        </style>
+    </head>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md py-3">
+        <div class="container-fluid" style="width: 100%; margin: 0px 10px 0px 10px;"><a
+                class="navbar-brand d-flex align-items-center" href="#"><span id="logo">Patinhas
+                    Center</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+                data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item itens"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="aboutus.html">Sobre Nós</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                    <li class="nav-item itens"><a class="nav-link" href="subscricao.html">Subscrição</a></li>
+                    <li class="dropdown nav-item ">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pets
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <li><a class="dropdown-item" href="pets.html">Meus Pets</a></li>
+                            <li><a class="dropdown-item" href="addanimal.html">Registrar Pet</a></li>
+                            <li><a class="dropdown-item" href="fichatecnica.html">Ficha técnica</a></li>
+                            <li><a class="dropdown-item" href="consultas.html">Marcação de consultas</a></li>
+
+
+                        </ul>
+                        <script>
+                            if (localStorage.getItem('currentUser') == null) {
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" href="signup.html">Sign up</a>');
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" href="login.html">Login</a>');
+                            }
+                            else {
+                                document.write('<a class="btn btn-outline-dark ms-md-2 btn-nav" role="button" onclick="logout()" >Logout</a>');
+                                //say hello to the user
+                                document.write('<span class="text-muted ms-4">Olá, ' + JSON.parse(localStorage.getItem('currentUser')) + '</span>');
+                            }
+                        </script>
+            </div>
+        </div>
+    </nav>
+    <main class="background" style="min-height: 929px;">
+
+        <div class="container mt-5">
+            <h1 class="text-body text-left border-secondary mb-4 mt-4"
+                style="font-family: Raleway, sans-serif;font-weight: bold; border-bottom: 5px solid black; border-radius:5px">
+                Registar Patinhas&nbsp;
+            </h1>
+            <div class="row mt-2">
+                <div class=" col-12 col-md-6 ">
+                    <h4 class="ms-2">Nome</h4>
+                    <input id="nome" class="border "
+                        style="background-color: transparent; margin-left: 10px; width: 90%;" placeholder="Nome do Pet">
+                </div>
+                <div class="col-12 col-md-6 espaçoFicha ">
+                    <h4 class="ms-2">Espécie</h4>
+                    <input id="especie" class="border "
+                        style="background-color: transparent; margin-left: 10px; width: 90%; "
+                        placeholder="Cão/Gato/etc">
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class=" col-2 ">
+                    <h4 class="ms-2">Peso</h4>
+                    <input id="peso" class="border "
+                        style="background-color: transparent; margin-left: 10px; width: 90%;" placeholder="2 Kg">
+                </div>
+                <div class="col-2 espaçoFicha" style="padding: left 40px;">
+                    <h4 class="ms-2">Sexo</h4>
+                    <input id="sexo" class="border "
+                        style="background-color: transparent; margin-left: 10px; width: 68%;" placeholder="M/F">
+                </div>
+                <div class="col-2 espaçoFicha ">
+                    <h4 class="ms-2">Idade</h4>
+                    <input id="idade" class="border "
+                        style="background-color: transparent; margin-left: 10px; width: 68%;" placeholder="3">
+                </div>
+                <div class="col-6 espaçoFicha ">
+                    <h4 class="ms-2">Raça:</h4>
+                    <input id="raca" class="border"
+                        style="background-color: transparent; margin-left: 10px; width: 90%;" placeholder="bulldog">
+                </div>
+                <div class="mb-3 pt-4 col-6">
+                    <label for="formFile" class="form-label">Adicionar uma foto:</label>
+                    <input class="form-control" id="imagem" type="file" id="formFile">
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row mt-2 ">
+
+            <br>
+
+        </div>
+        <div class="d-none text-danger col-form-label" style="text-align: center;" id="registoError">
+            <i class="fa fa-exclamation-triangle" style="font-size: 30px;"></i> Todos os campos são de preenchimento
+            obrigatório!
+        </div>
+        <div class="d-none text-success col-form-label" style="text-align: center;" id="registoSuccess">
+            <i class="fa fa-check" style="font-size: 30px;"></i> Registo com sucesso!
+        </div>
+
+        <div class="mt-4" style="text-align: center;">
+            <div>
+                <button type="button" id="registerButton" class="andronio btn btn-primary">Registar</button>
+                <a type="button" href="index.html" id="button" class="andronio btn btn-danger">Cancelar</a>
+            </div>
+        </div>
+        </div>
+    </main>
+    <nav class="navbar navbar-light bg-light fixed-bottom" style="height:50px;" style="height: 50px;">
+        <div class="container small">
+
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link">SOBRE NÓS</a>
+                </div>
+            </div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link">CONTACTOS</a>
+                </div>
+            </div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="#" class="nav-link"> <i class="fa fa-location-arrow"
+                            aria-hidden="true"></i> AVEIRO</a>
+                </div>
+            </div>
+            <div class="navbar-text"> Copyright 2022 &copy; PetVet</div>
+        </div>
+    </nav>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="./assets/js/registopet.js"></script>
+    <script src="./authentication.js"></script>
+    <script src="./addanimal.js"></script>
+</body>
+
+</html>
