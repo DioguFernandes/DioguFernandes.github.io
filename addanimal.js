@@ -10,7 +10,6 @@ $(document).ready(function () {
     var imagem = document.getElementById("imagem").value;
     var registoError = document.getElementById("registoError");
     var registoSuccess = document.getElementById("registoSuccess");
-    const reader = new FileReader();
 
     if (
       nome == "" ||
@@ -35,7 +34,7 @@ $(document).ready(function () {
       gender: $("#sexo").val(),
       race: $("#raca").val(),
       weight: $("#peso").val(),
-      imagem: reader.readAsDataURL($("#imagem")[0].files[0]),
+      imagem: $("#selected").val(),
     };
     if (JSON.parse(window.localStorage.getItem("animais")) == null) {
       window.localStorage.setItem("animais", "[]");
