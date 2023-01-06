@@ -1,10 +1,16 @@
 //if local storage is empty, create a new array
 if (localStorage.getItem("users") === null) {
-  localStorage.setItem("users", JSON.stringify([]));
+  localStorage.setItem(
+    "users",
+    JSON.stringify([
+      { username: "admin", email: "admin@gmail.com", password: "admin" },
+    ])
+  );
 }
 
 function getUser(email) {
   let users = JSON.parse(localStorage.getItem("users"));
+  console.log(users);
   let user = users.find((user) => user.email === email);
   return user;
 }
@@ -18,7 +24,6 @@ function emailExists(email) {
 function login(form) {
   let email = form.elements["email"].value;
   let password = form.elements["password"].value;
-
   let user = getUser(email);
   if (user && user.password === password) {
     localStorage.setItem("currentUser", JSON.stringify(user.username));
