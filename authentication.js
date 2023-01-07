@@ -6,7 +6,7 @@ if (localStorage.getItem("users") !== null) {
   localStorage.setItem(
     "users",
     JSON.stringify([
-      { username: "professor", email: "teste@gmail.com", password: "123" },
+      { username: "professor", email: "teste@gmail.com", password: "teste" },
     ])
   );
 }
