@@ -1,9 +1,12 @@
 //if local storage is empty, create a new array
 if (localStorage.getItem("users") === null) {
+  localStorage.setItem("users", JSON.stringify([]));
+}
+if (localStorage.getItem("users") !== null) {
   localStorage.setItem(
     "users",
     JSON.stringify([
-      { username: "professor", email: "teste@gmail.com", password: "teste" },
+      { username: "professor", email: "teste@gmail.com", password: "123" },
     ])
   );
 }
