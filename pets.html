@@ -108,7 +108,7 @@
                 </div>
             </div>
 
-            <div id="professor">AAAAAAAAAAAAAAAAAAAAAAAAAAAA</div>
+
 
 
 
@@ -125,6 +125,7 @@
                                             <div class="row">
                                                 <h5 class="card-title" data-bind="text:name"></h5>
                                                 <p class="card-text">
+                                                    <strong>Espécie:</strong> <span data-bind="text:species"></span><br>
                                                     <strong>Sexo:</strong> <span data-bind="text:gender"></span><br>
                                                     <strong>Idade:</strong> <span data-bind="text:age"></span><br>
                                                 </p>
@@ -195,13 +196,9 @@
         integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-
         $().ready(function () {
             function vm() {
                 self = this;
-
-
-
                 self.animais = ko.observableArray(JSON.parse(window.localStorage.getItem('animais')));
                 console.log(self.animais());
             }

@@ -53,16 +53,6 @@ $(document).ready(function () {
     window.location = "pets.html";
   });
   viewModel1 = new (function () {
-    animais = {
-      name: "teste",
-      age: "teste",
-      species: "",
-      gender: "ff",
-      race: "a",
-      weight: "a",
-    };
-    console.log(animais);
-
     animais = JSON.parse(window.localStorage.getItem("animais"));
     console.log(animais);
   })();
